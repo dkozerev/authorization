@@ -29,6 +29,11 @@ main_line1.addWidget(login_btn, alignment=Qt.AlignCenter)
 main_line1.addStretch(1)
 window.setLayout(main_line1)
 
+name_lb = QLabel("")
+line2 = QVBoxLayout()
+line2.addWidget(name_lb)
+window1.setLayout(line2)
+
 
 def login():
     login_input = login_line.text()
@@ -37,6 +42,7 @@ def login():
     if data:
         if passw_input == data[0][1]:
             print(data)
+            name_lb.setText(data[0][2])
         else:
             print("Wrong password")
     else:
